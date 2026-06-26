@@ -1,15 +1,14 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import type { Metadata } from "next"
 
 import "@workspace/ui/globals.css"
+import { MolioShell } from "@/components/molio-shell"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@workspace/ui/lib/utils";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+export const metadata: Metadata = {
+  title: "Molio Byggeplan Validator",
+  description:
+    "Validér byggeplaner mod gældende danske standarder med Molio-kilder, rettelsesforslag og tillidsscore.",
+}
 
 export default function RootLayout({
   children,
@@ -17,13 +16,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
-    >
+    <html lang="da">
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <MolioShell>{children}</MolioShell>
+        </ThemeProvider>
       </body>
     </html>
   )

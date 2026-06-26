@@ -1,6 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
+  "globalEnv": ["AI_GATEWAY_API_KEY", "MOLIO_MCP_URL", "MOLIO_MCP_TOKEN"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],

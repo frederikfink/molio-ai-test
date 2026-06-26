@@ -2,13 +2,43 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@font-face {
+    font-family: "TT Hoves";
+    src: url("/fonts/TTHoves-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TT Hoves";
+    src: url("/fonts/TTHoves-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TT Hoves";
+    src: url("/fonts/TTHoves-DemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 @source "../../../apps/**/*.{ts,tsx}";
 @source "../../../components/**/*.{ts,tsx}";
 @source "../**/*.{ts,tsx}";
 
 @theme inline {
-    --font-heading: var(--font-sans);
+    --font-heading: "TT Hoves", var(--font-sans);
+    --color-molio-primary: var(--molio-primary);
+    --color-molio-primary-dark: var(--molio-primary-dark);
+    --color-molio-secondary: var(--molio-secondary);
+    --color-molio-muted: var(--molio-muted);
+    --color-molio-muted-foreground: var(--molio-muted-foreground);
+    --color-molio-border: var(--molio-border);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -51,72 +81,86 @@
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+    --molio-primary: #315d6d;
+    --molio-primary-dark: #112127;
+    --molio-secondary: #de7852;
+    --molio-secondary-dark: #aa4620;
+    --molio-muted: #e7e7e8;
+    --molio-muted-foreground: #6d6e71;
+    --molio-border: #e7e7e8;
+    --background: #ffffff;
+    --foreground: #000000;
+    --card: #ffffff;
+    --card-foreground: #000000;
+    --popover: #ffffff;
+    --popover-foreground: #000000;
+    --primary: #315d6d;
+    --primary-foreground: #ffffff;
+    --secondary: #de7852;
+    --secondary-foreground: #ffffff;
+    --muted: #f2f2f2;
+    --muted-foreground: #6d6e71;
+    --accent: #e7e7e8;
+    --accent-foreground: #000000;
+    --destructive: #df001b;
+    --border: #e7e7e8;
+    --input: #e7e7e8;
+    --ring: #315d6d;
+    --chart-1: #315d6d;
+    --chart-2: #de7852;
+    --chart-3: #7fb439;
+    --chart-4: #3f5759;
+    --chart-5: #112127;
+    --radius: 0.25rem;
+    --sidebar: #ffffff;
+    --sidebar-foreground: #000000;
+    --sidebar-primary: #315d6d;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #f2f2f2;
+    --sidebar-accent-foreground: #000000;
+    --sidebar-border: #e7e7e8;
+    --sidebar-ring: #315d6d;
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+    --molio-primary: #315d6d;
+    --molio-primary-dark: #112127;
+    --molio-secondary: #de7852;
+    --molio-secondary-dark: #aa4620;
+    --molio-muted: #e7e7e8;
+    --molio-muted-foreground: #6d6e71;
+    --molio-border: #e7e7e8;
+    --background: #ffffff;
+    --foreground: #000000;
+    --card: #ffffff;
+    --card-foreground: #000000;
+    --popover: #ffffff;
+    --popover-foreground: #000000;
+    --primary: #315d6d;
+    --primary-foreground: #ffffff;
+    --secondary: #de7852;
+    --secondary-foreground: #ffffff;
+    --muted: #f2f2f2;
+    --muted-foreground: #6d6e71;
+    --accent: #e7e7e8;
+    --accent-foreground: #000000;
+    --destructive: #df001b;
+    --border: #e7e7e8;
+    --input: #e7e7e8;
+    --ring: #315d6d;
+    --chart-1: #315d6d;
+    --chart-2: #de7852;
+    --chart-3: #7fb439;
+    --chart-4: #3f5759;
+    --chart-5: #112127;
+    --sidebar: #ffffff;
+    --sidebar-foreground: #000000;
+    --sidebar-primary: #315d6d;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #f2f2f2;
+    --sidebar-accent-foreground: #000000;
+    --sidebar-border: #e7e7e8;
+    --sidebar-ring: #315d6d;
 }
 
 @layer base {
@@ -124,9 +168,29 @@
     @apply border-border outline-ring/50;
     }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: "TT Hoves", var(--font-sans), sans-serif;
+    }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "TT Hoves", var(--font-sans), sans-serif;
+    font-weight: 500;
+    line-height: 1.25;
     }
   button:not(:disabled), [role="button"]:not(:disabled) {
     cursor: pointer;
     }
+}
+
+@layer components {
+  .molio-hero {
+    background: linear-gradient(135deg, #f2f2f2 0%, #ffffff 55%, #e7e7e8 100%);
+  }
+
+  [data-slot="button"][data-variant="default"]:not(:disabled):hover {
+    background-color: var(--molio-primary-dark);
+  }
+
+  [data-slot="button"][data-variant="secondary"]:not(:disabled):hover {
+    background-color: var(--molio-secondary-dark);
+  }
 }
